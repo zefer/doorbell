@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doorbell</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+
+<body>
+  <h1>Doorbell</h1>
+
+  <div id="token_div" style="display: none;">
+    <p>
+      Subscribe this device to doorbell notifications using this script &amp;
+      device instance ID token:
+    </p>
+    <pre id="token" style="word-break: break-all; background:#111; color:#fff;"></pre>
+    <button onclick="deleteToken()">Delete Token</button>
+  </div>
+
+  <div id="permission_div" style="display: none;">
+    <h4>Needs Permission</h4>
+    <p id="token"></p>
+    <button onclick="requestPermission()">Request Permission</button>
+  </div>
+
+  <div id="messages"></div>
+
+<!-- Scripts available when served by Firebase hosting. -->
+<!-- https://firebase.google.com/docs/web/setup -->
+<script type="text/javascript" src="/__/firebase/3.9.0/firebase-app.js"></script>
+<script type="text/javascript" src="/__/firebase/3.9.0/firebase-messaging.js"></script>
+<script type="text/javascript" src="/__/firebase/init.js"></script>
+
+<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
