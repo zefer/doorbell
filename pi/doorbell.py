@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import time
+import time, os
 from subprocess import call
 
 GPIO.setmode(GPIO.BCM)
@@ -10,5 +10,6 @@ while True:
     input_state = GPIO.input(18)
     if input_state == False:
         print('Button Pressed')
-        call(['./notify.sh'])
+        script_path = os.path.join(os.path.dirname(__file__), 'notify.sh')
+        call([script_path])
         time.sleep(0.5)
