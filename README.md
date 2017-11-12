@@ -28,10 +28,15 @@ firebase deploy
 
 * Wire a push button to GND & GPIO pin 18
 * Install the Python & `sudo pip install RPi.GPIO`
-* Define the environment variable using the server key found in your Firebase
-  project's settings under "Settings > Cloud Messaging > Server Key"
-  `export DOORBELL_FIREBASE_SERVER_KEY=changeme`
-* Run it `sudo -E bash -c 'python doorbell.py'`
+* Run it:
+  * With [a systemd unit][systemd-unit], or
+  * Manually `DOORBELL_FIREBASE_SERVER_KEY=changeme python pi/doorbell.py` or
+    `sudo -E bash -c 'python doorbell.py'`
+
+Note: `DOORBELL_FIREBASE_SERVER_KEY` should be defined using the server key
+found in your Firebase project's settings under "Settings > Cloud Messaging >
+Server Key".
 
 [firebase]: https://firebase.google.com/
 [fcm-quickstart]: https://firebase.google.com/
+[systemd-unit]: https://github.com/zefer/ansible/blob/master/roles/doorbell/templates/doorbell.service
