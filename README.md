@@ -16,10 +16,10 @@ circuits.
 ## Setup: Raspberry Pi
 
 * Wire the doorbell (isolated, see above) or a push button to GND & GPIO pin 18
-* Install the Python & sudo pip install RPi.GPIO`
+* Compile it (see deploy.sh for a Raspberry Pi compilation)
 * Run it:
-  * With [a systemd unit][systemd-unit], or
-  * Manually `python pi/doorbell.py` or `sudo -E bash -c 'python doorbell.py'`
+  * `./doorbell`
+  * With [a systemd unit][systemd-unit]
 
 ## Setup: Ansible Example
 
