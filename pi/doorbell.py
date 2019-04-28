@@ -6,6 +6,8 @@ gpio_pin = 18
 script_path = os.path.join(os.path.dirname(__file__), 'notify.sh')
 
 def cb(pin):
+    print("button pressed")
+    sys.stdout.flush()
     call([script_path])
 
 GPIO.setmode(GPIO.BCM)
