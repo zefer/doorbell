@@ -11,19 +11,20 @@ followed by at least `debounceThreshold` events within `debounce` period.
 */
 package main
 
-import(
+import (
 	"fmt"
 	"os"
 	"os/exec"
 	"path"
 	"path/filepath"
 	"time"
+
 	"github.com/stianeikeland/go-rpio"
 )
 
 var (
-	pin = rpio.Pin(24)
-	debounce = time.Millisecond * 300
+	pin               = rpio.Pin(24)
+	debounce          = time.Millisecond * 300
 	debounceThreshold = 3
 )
 
