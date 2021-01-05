@@ -14,6 +14,8 @@ echo 'Running commands on doorbell server'
 ssh $server_host -t '\
   sudo systemctl stop doorbell \
   && sleep 1 \
+  && sudo chown root /home/joe/doorbell \
+  && sudo chgrp root /home/joe/doorbell \
   && sudo mv /home/joe/doorbell /opt/doorbell \
   && sudo systemctl start doorbell \
   && sleep 1
